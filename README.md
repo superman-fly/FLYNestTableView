@@ -3,12 +3,14 @@ ScrollView嵌套多个TableView
 
 csdn博客：https://blog.csdn.net/feiyue0823/article/details/88412580
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat tabOffsetY;
-    CGFloat offsetY = scrollView.contentOffset.y;
+核心代码
+
+    - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+        CGFloat tabOffsetY;
+        CGFloat offsetY = scrollView.contentOffset.y;
     
-    _isTopIsCanNotMoveTabViewPre = _isTopIsCanNotMoveTabView;
-    _isCanMoveTopTabViewPre = _isCanMoveTopTabView;
+        _isTopIsCanNotMoveTabViewPre = _isTopIsCanNotMoveTabView;
+        _isCanMoveTopTabViewPre = _isCanMoveTopTabView;
     
     if (self.topView.contentSizeHeight > self.screen_height) {
         tabOffsetY = self.screen_height;
